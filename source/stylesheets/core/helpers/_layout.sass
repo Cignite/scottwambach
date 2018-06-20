@@ -1,0 +1,31 @@
+=clearfix
+  &:before,
+  &:after
+    clear: both
+    content: ""
+    display: table
+
+=wrap
+  +clearfix
+  max-width: $page-width
+  margin: 0 auto
+
+=wrap-wide
+  +clearfix
+  max-width: $page-width-wide
+  margin: 0 auto
+
+=wrap-narrow
+  +clearfix
+  max-width: $page-width-narrow
+  margin: 0 auto
+
+=grid($columns, $gutter, $pos)
+  float: $pos
+  padding-right: $gutter + px
+  width: $columns / 24 * 100%
+
+=grid-percent($width, $gutter, $pos)
+  float: $pos
+  padding-right: $gutter + px
+  width: $width / $page-width * 100%

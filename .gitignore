@@ -1,0 +1,16 @@
+.sass-cache
+.DS_Store*
+.env
+.rvmrc
+.tmp
+node_modules
+.bundle/*
+*.swp
+build
+slurper_config.yml
+.cache/*
+*.scssc
+.env
+.assets
+.vscode
+package-lock.json

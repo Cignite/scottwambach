@@ -1,0 +1,75 @@
+{
+  "name": "middleman-gulp",
+  "version": "0.0.1",
+  "description": "A Middleman 4 template using Gulp.js",
+  "author": "",
+  "homepage": "https://www.redstitchdigital.com/",
+  "license": "MIT",
+  "keywords": [
+    "middleman",
+    "gulp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redstitch/boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Redstitch/boilerplate/issues"
+  },
+  "scripts": {
+    "development": "NODE_ENV=development gulp default",
+    "production": "NODE_ENV=production gulp production"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.0.0",
+    "del": "^3.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-environments": "^0.1.2",
+    "gulp-eslint": "^4.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.4",
+    "gulp-sizereport": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^2.2.0",
+    "sass-lint": "^1.12.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "barba.js": "^1.0.0",
+    "font-awesome": "^4.7.0",
+    "fullpage.js": "^2.9.7",
+    "fuse.js": "^3.2.0",
+    "jquery": "^3.2.1",
+    "lightbox2": "^2.10.0",
+    "mediaelement": "^4.2.9",
+    "moment": "^2.18.1",
+    "scrollmagic": "^2.0.5",
+    "slick-carousel": "^1.8.1",
+    "smartmenus": "^1.1.0",
+    "smartmenus-keyboard": "^0.4.0",
+    "webfontloader": "^1.6.27"
+  },
+  "engines": {
+    "node": ">= 6.9.4"
+  }
+}

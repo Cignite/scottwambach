@@ -1,0 +1,35 @@
+*
+  box-sizing: border-box
+
+body
+  +clearfix
+  font-size: 16px
+
+main
+  font-family: $font-base
+  overflow-x: hidden
+
+  &.transparent
+    +scale-up($ipad-port)
+      margin-top: 0 !important
+
+.wrap
+  +wrap
+  padding: 0 30px
+
+  +scale-down($ipad-port)
+    padding: 0 15px
+
+  &.wide
+    +wrap-wide
+
+  &.narrow
+    +wrap-narrow
+
+.equal-height
+  +clearfix
+  opacity: 0
+  transition-duration: $anim-speed
+
+  &.loaded
+    opacity: 1
