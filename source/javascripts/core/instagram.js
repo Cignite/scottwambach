@@ -1,16 +1,6 @@
 const $ = require('jquery');
 const Instafeed = require('instafeed.js');
 
-function getYear() {
-  const date = new Date();
-  const year = date.getFullYear();
-  $('.year').text(year);
-}
-
-$(document).ready(() => {
-  getYear();
-});
-
 const feed = new Instafeed({
   get: 'user',
   userId: '12752195',
@@ -45,4 +35,4 @@ const feed = new Instafeed({
   },
 });
 
-feed.run();
+module.exports = feed;
