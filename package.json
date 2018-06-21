@@ -1,9 +1,9 @@
 {
-  "name": "middleman-gulp",
+  "name": "wambach-dev-site",
   "version": "0.0.1",
-  "description": "A Middleman 4 template using Gulp.js",
+  "description": "",
   "author": "",
-  "homepage": "https://www.redstitchdigital.com/",
+  "homepage": "",
   "license": "MIT",
   "keywords": [
     "middleman",
@@ -11,10 +11,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Redstitch/boilerplate.git"
+    "url": "git+https://github.com/scwambach/wambachdev.git"
   },
   "bugs": {
-    "url": "https://github.com/Redstitch/boilerplate/issues"
+    "url": "https://github.com/scwambach/wambachdev/issues"
   },
   "scripts": {
     "development": "NODE_ENV=development gulp default",

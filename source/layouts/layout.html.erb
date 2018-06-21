@@ -2,13 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Title</title>
+    <title><%= "#{page_name} | " if defined? page_name %><%= data.global.title %></title>
     <%= stylesheet_link_tag :site %>
   </head>
   <body>
     <main>
+      <%= partial 'partials/organisms/header' %>
       <%= yield %>
+      <%= partial 'partials/organisms/footer' %>
     </main>
   </body>
-  <%= javascript_include_tag :bundle, async: !development? %>
+  <%= javascript_include_tag :bundle %>
 </html>

@@ -29,6 +29,10 @@ helpers do
   end
 end
 
+data.pages.each do |page|
+  proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/page.html", locals: { page_name: page.first.capitalize.gsub('_', ' '), content: page[1] }, ignore: true
+end
+
 configure :build do
   activate :external_pipeline,
     name: :gulp,
