@@ -38,10 +38,13 @@ const feed = new Instafeed({
 
     $(numberArray).each(function imageReveal(i) {
       const dataNum = $(this)[0];
+      console.log(i);
+      console.log(`${dataNum}`);
       setTimeout(() => {
         $(`#instafeed img[data-number="${dataNum}"`).addClass('loaded');
       }, (i + 1) * 50);
     });
+    console.log(numberArray);
   },
 });
 feed.run();
