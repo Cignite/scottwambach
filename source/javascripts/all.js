@@ -1,1 +1,1 @@
-require('./core/base.js');
+require('./core/base');
