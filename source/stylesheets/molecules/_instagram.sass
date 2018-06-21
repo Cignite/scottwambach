@@ -1,0 +1,25 @@
+.instagram
+  +clearfix
+
+  .image-container
+    display: block
+    float: left
+    height: 0
+    overflow: hidden
+    padding-bottom: 20%
+    position: relative
+    width: 20%
+
+    +scale-down($ipad-land)
+      padding-bottom: 33.333%
+      width: 33.333%
+
+  img
+    +centered
+    opacity: 0
+    transition-duration: $anim-speed
+    width: 101%
+
+    &.loaded
+      opacity: 1
+      transition-delay: $anim-speed

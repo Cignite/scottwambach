@@ -1,13 +1,20 @@
 *
   box-sizing: border-box
 
+html,
+body
+  height: 100%
+  overflow: hidden
+
 body
   +clearfix
   font-size: 16px
 
 main
   font-family: $font-base
+  height: 100%
   overflow-x: hidden
+  overflow-y: auto
 
   &.transparent
     +scale-up($ipad-port)
