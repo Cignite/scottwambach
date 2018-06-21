@@ -1,4 +1,7 @@
 <nav class='navigation'>
+  <a href='/' class='logo'>
+    <%= partial 'partials/atoms/logo' %>
+  </a>
   <ul>
     <% data.pages.each do |link| %>
     <li><a href='/<%= link.first.gsub('_', '-') %>' title='<%= link.first.capitalize.gsub('_', ' ') %>'><%= link.first.capitalize.gsub('_', ' ') %></a></li>
