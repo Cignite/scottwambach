@@ -27,12 +27,14 @@ const feed = new Instafeed({
     shuffleArray(numberArray);
 
     $(numberArray).each(function imageReveal(i) {
-      const dataNum = $(this)[0].toString();
+      const dataNum = $(this)[0];
       setTimeout(() => {
-        $(`#instafeed img[data-number="${dataNum}"`).addClass('loaded');
+        $(`#instafeed img[data-number="${dataNum}"]`).addClass('loaded');
       }, (i + 1) * 50);
+      setTimeout(() => {
+        $('#instafeed img[data-number="0"]').addClass('loaded');
+      }, 1000);
     });
   },
 });
-
-module.exports = feed;
+feed.run();

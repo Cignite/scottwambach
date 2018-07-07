@@ -7,10 +7,10 @@
   </head>
   <body>
     <main>
-      <% # partial 'partials/organisms/header' %>
+      <%= partial 'partials/organisms/header' %>
       <%= yield %>
       <%= partial 'partials/organisms/footer' %>
     </main>
   </body>
-  <%= javascript_include_tag :bundle %>
+  <%= javascript_include_tag :site %>
 </html>

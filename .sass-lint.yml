@@ -7,8 +7,8 @@ files:
   ignore:
     - 'gulp/stylesheets/libs/**/*.*'
     - 'bower_components/**/*.*'
-    - 'source/stylesheets/libs/**/*.*'
-    - 'source/stylesheets/core/helpers/**/*.*'
+    - 'source/sass/libs/**/*.*'
+    - 'source/sass/core/helpers/**/*.*'
 
 rules:
   border-zero: 1
@@ -74,6 +74,10 @@ rules:
       exclude:
         - scale-up
         - scale-down
+        - scale-up-between
+        - scale-down-between
+        - scale-height
+        - highlight
         - placeholder
 
   nesting-depth:

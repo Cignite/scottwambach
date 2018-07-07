@@ -1,0 +1,38 @@
+-
+  title: Sprout Design
+  url: http://sproutyourdesign.com
+  cms: WordPress
+  role: Front-end / WordPress Developer
+  collaborators:
+    - 'Design: Sprout Design'
+    - 'Copywriter: Red Tortoise'
+-
+  title: Evansville Design Group
+  url: http://evansvilledesign.org/
+  cms: WordPress
+  role: Front-end / WordPress Developer
+  collaborators:
+    - Evansville Design Group
+-
+  title: Healthy Communities Partnership
+  url: http://healthyevv.com/
+  cms: WordPress
+  role: Front-end / WordPress Developer
+  collaborators:
+    - 'Design: Sprout Design'
+    - 'Copywriter: Red Tortoise'
+-
+  title: Haunted Historic Evansville Ghost Tour
+  url: http://hauntedevansville.com/
+  cms: Netlify CMS
+  role: Front-end
+  collaborators:
+    - 'Design: Sprout Design'
+    - 'Copywriter: Red Tortoise'
+-
+  title: Tin Man Brewey
+  url: http://tinmanbrewing.com/
+  cms: WordPress
+  role: Backend / Front-end Developement
+  collaborators:
+    - 'Design: Melodic Virtue'

@@ -1,21 +1,31 @@
-# activate :directory_indexes
+# Activate and configure extensions
+# https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
-set :relative_links, true
-set :haml, { format: :html5 }
+# Layouts
+# https://middlemanapp.com/basics/layouts/
 
-# Disable Haml warnings
-Haml::TempleEngine.disable_option_validator!
-
+# Per-page layout changes
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
-page '/404.html', directory_index: false
-# page '/*', layout: false
 
-set :css_dir, 'stylesheets'
-set :images_dir, 'images'
-set :js_dir, 'javascripts'
-set :fonts_dir, 'fonts'
+# With alternative layout
+# page '/path/to/file.html', layout: 'other_layout'
+
+# Proxy pages
+# https://middlemanapp.com/advanced/dynamic-pages/
+
+# data.pages.each do |page|
+#   if page.first == 'home'
+#     proxy '/index.html', "/templates/#{page[1].template}.html", locals: { page_name: page.first, page: page[1] }, ignore: true
+#   else
+#     proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/#{page[1].template}.html", locals: { page_name: page.first, page: page[1] }, ignore: true
+#   end
+# end
+
+# Helpers
+# Methods defined in the helpers block are available in templates
+# https://middlemanapp.com/basics/helper-methods/
 
 helpers do
   def random_image()
@@ -29,24 +39,40 @@ helpers do
   end
 end
 
+set :css_dir, 'styles'
+set :images_dir, 'images'
+set :js_dir, 'js'
+set :fonts_dir, 'fonts'
+
+# Build-specific configuration
+# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
+
 data.pages.each do |page|
   proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/page.html", locals: { page_name: page.first.capitalize.gsub('_', ' '), content: page[1] }, ignore: true
 end
 
 configure :build do
+  activate :minify_html
   activate :external_pipeline,
     name: :gulp,
-    command: 'npm run production',
+    command: 'gulp build',
     source: '.tmp',
     latency: 1
+  ignore 'js/**/*.js'
+  ignore 'styles/site'
+  ignore 'styles/site.css.css'
+  ignore 'styles/site.css.css.map'
+  ignore '*.keep'
+  ignore '*.sass'
+end
 
-  ignore 'javascripts/all.js'
-  ignore 'stylesheets/site'
-
-  activate :gzip
-
-  activate :minify_html do |html|
-    html.remove_quotes = false
-    html.remove_intertag_spaces = true
-  end
+configure :development do
+  activate :external_pipeline,
+    name: :gulp,
+    command: 'gulp',
+    source: '.tmp',
+    latency: 1
+  ignore 'styles/site'
+  ignore 'styles/site.css.css'
+  ignore 'styles/site.css.css.map'
 end
