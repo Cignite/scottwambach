@@ -1,0 +1,14 @@
+<div class="copy">
+  <h3><%= content.title %></h3>
+  <ul>
+    <li>CMS: <%= content.cms %></li>
+    <li>Role: <%= content.role %></li>
+    <li>Collaborators:
+      <ul>
+        <% content.collaborators.each do |colab| %>
+        <li><%= colab %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

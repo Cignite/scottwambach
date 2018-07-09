@@ -1,4 +1,6 @@
-<%= partial 'partials/organisms/aspot' %>
-<div class="wrap">
-<%= lorem.paragraphs(80) %>
+<%= partial 'partials/organisms/hero' %>
+<div class="body-content">
+
+  <%= partial 'partials/organisms/projects-list', locals: { content: data.projects } %>
+
 </div>

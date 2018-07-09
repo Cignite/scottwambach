@@ -1,4 +1,5 @@
 const $ = require('jquery');
+const Barba = require('barba.js');
 
 function getYear() {
   const date = new Date();
@@ -6,6 +7,6 @@ function getYear() {
   $('.year').text(year);
 }
 
-$(document).ready(() => {
+Barba.Dispatcher.on('newPageReady', () => {
   getYear();
 });

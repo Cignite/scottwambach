@@ -51,6 +51,10 @@ data.pages.each do |page|
   proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/page.html", locals: { page_name: page.first.capitalize.gsub('_', ' '), content: page[1] }, ignore: true
 end
 
+data.projects.each do |project|
+  proxy "/work/#{project.title.downcase.gsub(' ', '-')}/index.html", "/templates/project.html", locals: { project_name: project.title, content: project }, ignore: true
+end
+
 configure :build do
   activate :minify_html
   activate :external_pipeline,

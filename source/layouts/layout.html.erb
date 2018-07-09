@@ -8,8 +8,12 @@
   <body>
     <main>
       <%= partial 'partials/organisms/header' %>
-      <%= yield %>
-      <%= partial 'partials/organisms/footer' %>
+      <div id="barba-wrapper" class="main-wrap">
+        <div class="barba-container main-wrap">
+          <%= yield %>
+          <%= partial 'partials/organisms/footer' %>
+        </div>
+      </div>
     </main>
   </body>
   <%= javascript_include_tag :site %>

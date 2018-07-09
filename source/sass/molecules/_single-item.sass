@@ -1,0 +1,35 @@
+.single-item
+  box-sizing: border-box
+  display: inline-block
+  padding: 0 50px 50px 0
+  text-align: left
+  transform: scale(1)
+  transition-duration: $anim-speed
+  width: 33%
+
+  &:hover
+    transform: scale(1.1)
+
+    .inner
+      box-shadow: 0 10px 30px -10px $black
+
+  .inner
+    +background-cover(center)
+    color: $white
+    height: 450px
+    position: relative
+    transition-duration: $anim-speed
+
+    &:before
+      content: ''
+      display: block
+      background-color: $overlay
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+  h4
+    bottom: 0
+    left: 20px
+    position: absolute

@@ -1,20 +1,21 @@
 *
   box-sizing: border-box
+  line-height: 1.5
 
 html,
 body
   height: 100%
-  overflow: hidden
 
 body
   +clearfix
   font-size: 16px
 
+.main-wrap
+  height: 100%
+
 main
   font-family: $font-base
   height: 100%
-  overflow-x: hidden
-  overflow-y: auto
   position: relative
 
   &.transparent
@@ -24,6 +25,8 @@ main
 .wrap
   +wrap
   padding: 0 30px
+  position: relative
+  z-index: 1
 
   +scale-down($ipad-port)
     padding: 0 15px
@@ -41,3 +44,6 @@ main
 
   &.loaded
     opacity: 1
+
+.widget
+  margin-bottom: 100px

@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const Instafeed = require('instafeed.js');
+const Barba = require('barba.js');
 
 const feed = new Instafeed({
   get: 'user',
@@ -30,11 +31,16 @@ const feed = new Instafeed({
       const dataNum = $(this)[0];
       setTimeout(() => {
         $(`#instafeed img[data-number="${dataNum}"]`).addClass('loaded');
-      }, (i + 1) * 50);
+      }, (i + 1) * 20);
       setTimeout(() => {
         $('#instafeed img[data-number="0"]').addClass('loaded');
-      }, 1000);
+      }, 30);
     });
   },
 });
-feed.run();
+
+Barba.Dispatcher.on('transitionCompleted', () => {
+  if ($('#instafeed').length) {
+    feed.run();
+  }
+});
