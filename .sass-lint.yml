@@ -3,7 +3,7 @@ options:
   merge-default-rules: false
 
 files:
-  include: 'source/stylesheets/**/*.s+(a|c)ss'
+  include: 'source/sass/**/*.s+(a|c)ss'
   ignore:
     - 'gulp/stylesheets/libs/**/*.*'
     - 'bower_components/**/*.*'
