@@ -5,31 +5,27 @@
   text-align: left
   transform: scale(1)
   transition-duration: $anim-speed
+  vertical-align: top
   width: 33%
 
   &:hover
     transform: scale(1.1)
 
     .inner
-      box-shadow: 0 10px 30px -10px $black
+      box-shadow: 0 10px 20px -15px $black
 
   .inner
-    +background-cover(center)
+    background-position: top center
+    background-size: cover
+    border: 1px solid $gray
     color: $white
     height: 450px
     position: relative
     transition-duration: $anim-speed
 
-    &:before
-      background-color: $overlay
-      content: ''
-      display: block
-      height: 100%
-      left: 0
-      position: absolute
-      top: 0
-      width: 100%
-  h4
-    bottom: 0
-    left: 20px
-    position: absolute
+  h3
+    box-sizing: border-box
+    color: $black
+    font-size: 16px
+    margin: 0
+    width: 100%

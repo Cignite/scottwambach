@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title><%= "#{page_name} | " if defined? page_name %><%= data.global.title %></title>
     <%= stylesheet_link_tag :site %>
   </head>
   <body>
     <main>
       <%= partial 'partials/organisms/header' %>
-      <div id="barba-wrapper" class="main-wrap">
-        <div class="barba-container main-wrap">
+      <div id='barba-wrapper' class='main-wrap'>
+        <div class='barba-container main-wrap'>
           <%= yield %>
           <%= partial 'partials/organisms/footer' %>
         </div>

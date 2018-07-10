@@ -1,0 +1,8 @@
+<% content = data.projects %>
+<div class='wrap'>
+  <div class='container'>
+    <% content.each do |proj| %>
+    <%= partial 'partials/molecules/project-item', locals: { content: proj } %>
+    <% end %>
+  </div>
+</div>

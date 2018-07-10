@@ -1,14 +1,26 @@
-<div class="copy">
-  <h3><%= content.title %></h3>
-  <ul>
-    <li>CMS: <%= content.cms %></li>
-    <li>Role: <%= content.role %></li>
-    <li>Collaborators:
-      <ul>
-        <% content.collaborators.each do |colab| %>
-        <li><%= colab %></li>
-        <% end %>
-      </ul>
-    </li>
-  </ul>
+<div class='project-detail'>
+  <div class='wrap'>
+    <div class='images'>
+      <% content.screens.each do |image| %>
+      <img src='<%= image %>' />
+      <% end %>
+    </div>
+    <div class='copy'>
+      <div class='inner'>
+        <h3><%= content.title %></h3>
+        <p><a href='<%= content.url %>'><%= content.url %></a></p>
+        <ul>
+          <li><strong>CMS:</strong> <%= content.cms %></li>
+          <li><strong>My role:</strong> <%= content.role %></li>
+          <li><strong>I worked with:</strong>
+            <ul>
+              <% content.collaborators.each do |colab| %>
+              <li><%= colab %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

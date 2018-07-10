@@ -24,6 +24,7 @@
     "gulp-browserify": "^0.5.1",
     "gulp-clean-css": "^3.9.4",
     "gulp-concat": "^2.6.1",
+    "gulp-css-scss": "^0.1.0",
     "gulp-eslint": "^4.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-notify": "^3.2.0",

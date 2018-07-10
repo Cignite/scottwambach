@@ -48,7 +48,7 @@ set :fonts_dir, 'fonts'
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 data.pages.each do |page|
-  proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/page.html", locals: { page_name: page.first.capitalize.gsub('_', ' '), content: page[1] }, ignore: true
+  proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/page.html", locals: { page_name: page[1].title, content: page[1] }, ignore: true
 end
 
 data.projects.each do |project|
