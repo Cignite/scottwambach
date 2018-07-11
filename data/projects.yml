@@ -44,13 +44,3 @@
     - 'Copywriter: Red Tortoise'
   screens:
     - '/images/uploads/haunted.jpg'
--
-  title: Tin Man Brewey
-  url: http://tinmanbrewing.com/
-  cms: WordPress
-  role: Backend / Front-end Developement
-  collaborators:
-    - 'Designer: Melodic Virtue'
-  screens:
-    - '/images/uploads/tinman-home.jpg'
-    - '/images/uploads/tinman-beer.jpg'
