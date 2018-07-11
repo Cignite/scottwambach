@@ -44,3 +44,12 @@
     - 'Copywriter: Red Tortoise'
   screens:
     - '/images/uploads/haunted.jpg'
+-
+  title: Videogame of the Month Club
+  url: http://videogameofthemonth.club/
+  cms: WordPress
+  role: Front-end / WordPress Developer
+  collaborators:
+    - 'Designer: Sprout Design'
+  screens:
+    - '/images/uploads/videogame.jpg'
