@@ -3,14 +3,14 @@
     <form name='contact' id='contact' method='POST' netlify-honeypot='bot-field' netlify>
       <p>
         <label for='full-name'>Hi! I'm Scott. What's your name?</label>
-        <input required type='text' id='full-name'>
+        <input required type='text' id='full-name' name='full-name'>
       </p>
       <p class='hidden'>
         <label>Don’t fill this out if you're human: <input name='bot-field' /></label>
       </p>
       <p>
         <label for='subject'>What can I help with?</label>
-        <select id='subject' id='subject'>
+        <select id='subject' id='subject' name='subject'>
           <option value='I need a new website'>I would like a new website</option>
           <option value='I would like to update my website'>I would like to update my website</option>
           <option value='I just have a few questions'>I just have a few questions</option>
@@ -18,17 +18,17 @@
       </p>
       <p>
         <label for='due-date'>When do you need this completed?</label>
-        <input type='date' id='due-date'>
+        <input type='date' id='due-date' name='due-date'>
       </p>
       <p>
         <label for='graphic-designer'>
-          <input id='graphic-designer' type='checkbox'/>
+          <input id='graphic-designer' name='graphic-designer' type='checkbox'/>
           I need a graphic designer
         </label>
       </p>
       <p>
         <label for='copywriter'>
-          <input id='copywriter' type='checkbox'/>
+          <input id='copywriter' name='copywriter' type='checkbox'/>
           I need a copy writer
         </label>
       </p>
