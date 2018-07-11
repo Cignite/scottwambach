@@ -45,7 +45,7 @@
   screens:
     - '/images/uploads/haunted.jpg'
 -
-  title: Videogame of the Month Club
+  title: Video Game of the Month Club
   url: http://videogameofthemonth.club/
   cms: WordPress
   role: Front-end / WordPress Developer
