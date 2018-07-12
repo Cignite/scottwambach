@@ -9,4 +9,5 @@ function getYear() {
 
 Barba.Dispatcher.on('newPageReady', () => {
   getYear();
+  window.scrollTo(0, 0);
 });
