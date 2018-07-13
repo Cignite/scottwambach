@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href='<%= data.site_settings.favicon %>'>
     <% if defined? project_name %>
-    <title><%= "#{project_name} | " %><%= data.global.title %></title>
+    <title><%= "#{project_name} | " %><%= data.site_settings.site_title %></title>
     <% else %>
-    <title><%= "#{page_name} | " if defined? page_name %><%= data.global.title %></title>
+    <title><%= "#{page_name} | " if defined? page_name %><%= data.site_settings.site_title %></title>
     <% end %>
     <%= stylesheet_link_tag :site %>
   </head>
