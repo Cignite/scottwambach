@@ -1,5 +1,7 @@
 favicon: /images/uploads/favicon.png
-footer_copy: '&copy; 2018 Copyright Scott Wambach - Front-end Web Developerss'
+footer_copy: >-
+  &copy; <span class='year'></span> Copyright Scott Wambach - Front-end Web
+  Developerss
 socials:
   - icon: instagram
     url: 'https://www.instagram.com/scottcwambach/'
