@@ -5,29 +5,52 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "/source/images/uploads"
-public_folder: "/images/uploads"
+media_folder: '/source/images/uploads'
+public_folder: '/images/uploads'
 
 collections:
+
+- label: 'Projects'
+  name: 'projects'
+  format: 'yml'
+  folder: 'data/project_items'
+  create: true
+  fields:
+    - {label: 'Title', name: 'title', widget: 'string'}
+    - {label: 'URL', name: 'url', widget: 'string'}
+    - {label: 'CMS', name: 'cms', widget: 'string'}
+    - {label: 'Role', name: 'role', widget: 'string'}
+    - label: 'Collaborators'
+      name: 'collaborators'
+      widget: 'list'
+      fields:
+        - {label: 'Collaborator', name: 'collaborator', widget: 'string'}
+    - label: 'Screens'
+      name: 'screens'
+      widget: 'list'
+      fields:
+        - label: 'image'
+          name: 'image'
+          widget: 'image'
 
   ###########################################
   ############## SITE SETTINGS ##############
   ###########################################
 
-  - label: "Site Settings"
-    name: "settings"
+  - label: 'Site Settings'
+    name: 'settings'
     editor:
       preview: false
     files:
-      - label: "Global Settings"
-        name: "global"
-        file: "data/site_settings.yml"
+      - label: 'Global Settings'
+        name: 'global'
+        file: 'data/site_settings.yml'
         fields:
           - {label: Favicon, name: favicon, widget: image}
           - {label: Footer Copy, name: footer_copy, widget: string}
-          - label: "Socials"
-            name: "socials"
-            widget: "list"
+          - label: 'Socials'
+            name: 'socials'
+            widget: 'list'
             fields:
               - label: Icon
                 name: icon
@@ -35,27 +58,3 @@ collections:
               - label: URL
                 name: url
                 widget: string
-      - label: "Projects"
-        name: "projects"
-        file: "data/project_items.yml"
-        fields:
-          - label: "Project Items"
-            name: "project_items"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "URL", name: "url", widget: "string"}
-              - {label: "CMS", name: "cms", widget: "string"}
-              - {label: "Role", name: "role", widget: "string"}
-              - label: "Collaborators"
-                name: "collaborators"
-                widget: "list"
-                fields:
-                  - {label: "Collaborator", name: "collaborator", widget: "string"}
-              - label: "Screens"
-                name: "screens"
-                widget: "list"
-                fields:
-                  - label: "image"
-                    name: "thumbnail"
-                    widget: "image"
