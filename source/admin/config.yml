@@ -37,7 +37,7 @@ collections:
                 widget: string
       - label: "Projects"
         name: "projects"
-        file: "data/projects.yml"
+        file: "data/project_items.yml"
         fields:
           - label: "Project Items"
             name: "project_items"
