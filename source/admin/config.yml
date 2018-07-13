@@ -11,24 +11,6 @@ public_folder: "/images/uploads"
 collections:
 
   ###########################################
-  ################## PAGES ##################
-  ###########################################
-
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    format: 'yml'
-    folder: "data/blog" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  ###########################################
   ############## SITE SETTINGS ##############
   ###########################################
 
@@ -42,24 +24,7 @@ collections:
         file: "data/site_settings.yml"
         fields:
           - {label: Favicon, name: favicon, widget: image}
-          - {label: Logo White, name: logo_white, widget: image}
-          - {label: Logo Red, name: logo_red, widget: image}
           - {label: Footer Copy, name: footer_copy, widget: string}
-          - label: Contact Info
-            name: contact_info
-            widget: object
-            fields:
-              - {label: Company Name, name: company_name, widget: string}
-              - {label: Street, name: street, widget: string}
-              - {label: City State, name: city_state, widget: string}
-              - {label: Phone, name: phone, widget: string}
-              - {label: Email, name: email, widget: string}
-          - label: Project Start Link
-            name: project_start
-            widget: object
-            fields:
-              - {label: Copy, name: copy, widget: string}
-              - {label: URL, name: url, widget: string}
           - label: "Socials"
             name: "socials"
             widget: "list"
@@ -70,30 +35,12 @@ collections:
               - label: URL
                 name: url
                 widget: string
-          - label: Footer
-            name: footer
-            widget: object
-            fields:
-              - label: CTA
-                name: cta
-                widget: object
-                fields:
-                  - {label: Heading, name: heading, widget: string}
-                  - {label: Hubspot Code, name: hubspot_code, widget: text}
-              - {label: Image, name: image, widget: image}
-              - {label: Button Copy, name: button_copy, widget: string}
-              - {label: Button URL, name: button_url, widget: string}
-
-        ################ NAVIGATION ################
-
-      - label: "Navigation"
-        name: "navigation"
-        file: "data/navigation.yml"
+      - label: "Projects"
+        name: "projects"
+        file: "data/projects.yml"
         fields:
-          - label: "Main Menu"
-            name: "main_menu"
+          - label: "Project Items"
+            name: "project_items"
             widget: "list"
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Open in new window, name: window, widget: boolean }
+              - {label: "Title", name: "title", widget: "string"}

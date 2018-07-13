@@ -1,2 +1,56 @@
 project_items:
-  - title: test
+  -
+    title: Sprout Design
+    url: http://sproutyourdesign.com
+    cms: WordPress
+    role: Front-end / WordPress Developer
+    collaborators:
+      - 'Designer: Sprout Design'
+      - 'Copywriter: Red Tortoise'
+    screens:
+      - '/images/uploads/sprout-home.jpg'
+      - '/images/uploads/sprout-port.jpg'
+      - '/images/uploads/sprout-blog.jpg'
+      - '/images/uploads/sprout-post.jpg'
+  -
+    title: Evansville Design Group
+    url: http://evansvilledesign.org/
+    cms: WordPress
+    role: Front-end / WordPress Developer
+    collaborators:
+      - Evansville Design Group
+    screens:
+      - '/images/uploads/edg-home.jpg'
+      - '/images/uploads/edg-news.jpg'
+      - '/images/uploads/edg-event.jpg'
+      - '/images/uploads/edg-jobs.jpg'
+      - '/images/uploads/edg-initiative.jpg'
+  -
+    title: Healthy Communities Partnership
+    url: http://healthyevv.com/
+    cms: WordPress
+    role: Front-end / WordPress Developer
+    collaborators:
+      - 'Designer: Sprout Design'
+      - 'Copywriter: Red Tortoise'
+    screens:
+      - '/images/uploads/hcp.jpg'
+  -
+    title: Haunted Historic Evansville
+    url: http://hauntedevansville.com/
+    cms: Netlify CMS
+    role: Front-end
+    collaborators:
+      - 'Designer: Sprout Design'
+      - 'Copywriter: Red Tortoise'
+    screens:
+      - '/images/uploads/haunted.jpg'
+  -
+    title: Video Game of the Month Club
+    url: http://videogameofthemonth.club/
+    cms: WordPress
+    role: Front-end / WordPress Developer
+    collaborators:
+      - 'Designer: Sprout Design'
+    screens:
+      - '/images/uploads/videogame.jpg'
