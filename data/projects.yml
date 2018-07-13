@@ -1,6 +1,13 @@
 project_items:
-  - title: Sprout Design
-  - title: 'Evansville Design Group '
-  - title: Healthy Communities Partnership
-  - title: Haunted Historic Evansville
-  - title: Video Game of the Month Club
+  - cms: WordPress
+    collaborators:
+      - collaborator: 'Designer: Sprout Design'
+      - collaborator: 'Copywriter: Red Tortoise'
+    role: Front-end / WordPress Developer
+    screens:
+      - thumbnail: /images/uploads/sprout-home.jpg
+      - thumbnail: /images/uploads/sprout-port.jpg
+      - thumbnail: /images/uploads/sprout-blog.jpg
+      - thumbnail: /images/uploads/sprout-post.jpg
+    title: Sprout Design
+    url: 'http://sproutyourdesign.com'
