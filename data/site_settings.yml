@@ -1,0 +1,9 @@
+favicon: /images/uploads/favicon.png
+footer_copy: '&copy; 2018 Copyright Scott Wambach - Front-end Web Developer'
+socials:
+  - icon: instagram
+    url: 'https://www.instagram.com/scottcwambach/'
+  - icon: facebook
+    url: 'https://www.facebook.com/wambach1'
+  - icon: linkedin
+    url: 'https://www.linkedin.com/in/scott-wambach-94b580b7/'
