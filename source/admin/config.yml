@@ -61,10 +61,18 @@ collections:
               - label: URL
                 name: url
                 widget: string
-          - label: "Project Order"
-            name: "project_order"
-            widget: "relation"
-            collection: "projects"
-            searchFields: ["title"]
-            valueField: "title"
-            displayFields: ["title"]
+      - label: 'Project Order'
+        name: 'project_order'
+        file: 'data/projects_order.yml'
+        fields:
+          - label: 'Ordered Items'
+            name: 'order_items'
+            widget: 'list'
+            fields:
+              - label: "Project"
+                name: "project"
+                widget: "relation"
+                collection: "projects"
+                searchFields: ["title"]
+                valueField: "title"
+                displayFields: ["title"]
