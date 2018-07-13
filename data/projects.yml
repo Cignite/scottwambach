@@ -5,8 +5,8 @@ project_items:
     cms: WordPress
     role: Front-end / WordPress Developer
     collaborators:
-      - 'Designer: Sprout Design'
-      - 'Copywriter: Red Tortoise'
+      - collaborator: 'Designer: Sprout Design'
+      - collaborator: 'Copywriter: Red Tortoise'
     screens:
       - '/images/uploads/sprout-home.jpg'
       - '/images/uploads/sprout-port.jpg'
@@ -18,7 +18,7 @@ project_items:
     cms: WordPress
     role: Front-end / WordPress Developer
     collaborators:
-      - Evansville Design Group
+      - collaborator: Evansville Design Group
     screens:
       - '/images/uploads/edg-home.jpg'
       - '/images/uploads/edg-news.jpg'
@@ -31,8 +31,8 @@ project_items:
     cms: WordPress
     role: Front-end / WordPress Developer
     collaborators:
-      - 'Designer: Sprout Design'
-      - 'Copywriter: Red Tortoise'
+      - collaborator: 'Designer: Sprout Design'
+      - collaborator: 'Copywriter: Red Tortoise'
     screens:
       - '/images/uploads/hcp.jpg'
   -
@@ -41,8 +41,8 @@ project_items:
     cms: Netlify CMS
     role: Front-end
     collaborators:
-      - 'Designer: Sprout Design'
-      - 'Copywriter: Red Tortoise'
+      - collaborator: 'Designer: Sprout Design'
+      - collaborator: 'Copywriter: Red Tortoise'
     screens:
       - '/images/uploads/haunted.jpg'
   -
@@ -51,6 +51,6 @@ project_items:
     cms: WordPress
     role: Front-end / WordPress Developer
     collaborators:
-      - 'Designer: Sprout Design'
+      - collaborator: 'Designer: Sprout Design'
     screens:
       - '/images/uploads/videogame.jpg'

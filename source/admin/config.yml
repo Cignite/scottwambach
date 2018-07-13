@@ -44,3 +44,18 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "CMS", name: "cms", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - label: "Collaborators"
+                name: "collaborators"
+                widget: "list"
+                fields:
+                  - {label: "Collaborator", name: "collaborator", widget: "string"}
+              - label: "Screens"
+                name: "screens"
+                widget: "list"
+                fields:
+                  - label: "image"
+                    name: "thumbnail"
+                    widget: "image"
