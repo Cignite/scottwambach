@@ -1,5 +1,0 @@
-# The following redirect is intended for use with most SPA's that handles routing internally.
-[[redirects]]
-  from = "https://scottwambach.netlify.com/*"
-  to = "https://scottwamba.ch/:splat"
-  status = 200
