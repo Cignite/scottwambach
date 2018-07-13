@@ -61,3 +61,10 @@ collections:
               - label: URL
                 name: url
                 widget: string
+          - label: "Project Order"
+            name: "project_order"
+            widget: "relation"
+            collection: "projects"
+            searchFields: ["title"]
+            valueField: "title"
+            displayFields: ["title"]
