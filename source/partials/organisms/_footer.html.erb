@@ -1,7 +1,7 @@
 <footer>
   <div class='wrap'>
-    &copy; <span class='year'></span> Copyright <%= data.global.title %><br><br>
+    <%= data.site_settings.footer_copy %><br><br>
     <p>Follow me:</p>
-    <%= partial 'partials/molecules/socials', locals: { content: data.global.socials } %>
+    <%= partial 'partials/molecules/socials', locals: { content: data.site_settings.socials } %>
   </div>
 </footer>

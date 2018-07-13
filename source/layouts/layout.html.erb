@@ -2,7 +2,13 @@
 <html>
   <head>
     <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href='<%= data.site_settings.favicon %>'>
+    <% if defined? project_name %>
+    <title><%= "#{project_name} | " %><%= data.global.title %></title>
+    <% else %>
     <title><%= "#{page_name} | " if defined? page_name %><%= data.global.title %></title>
+    <% end %>
     <%= stylesheet_link_tag :site %>
   </head>
   <body>

@@ -3,7 +3,7 @@ backend:
   repo: scwambach/wambachdev # Path to your GitHub repository
   branch: master # Branch to update (optional; defaults to master)
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 media_folder: '/source/images/uploads'
 public_folder: '/images/uploads'
@@ -46,6 +46,9 @@ collections:
         name: 'global'
         file: 'data/site_settings.yml'
         fields:
+          - {label: Site Title, name: site_title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Email, name: email, widget: string}
           - {label: Favicon, name: favicon, widget: image}
           - {label: Footer Copy, name: footer_copy, widget: string}
           - label: 'Socials'
