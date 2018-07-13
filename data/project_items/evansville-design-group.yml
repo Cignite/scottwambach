@@ -1,12 +1,12 @@
-title: Evansville Design Group
-url: http://evansvilledesign.org/
+title: Evansville Design Groups
+url: 'http://evansvilledesign.org/'
 cms: WordPress
 role: Front-end / WordPress Developer
 collaborators:
   - collaborator: Evansville Design Group
 screens:
-  - image: '/images/uploads/edg-home.jpg'
-  - image: '/images/uploads/edg-news.jpg'
-  - image: '/images/uploads/edg-event.jpg'
-  - image: '/images/uploads/edg-jobs.jpg'
-  - image: '/images/uploads/edg-initiative.jpg'
+  - image: /images/uploads/edg-home.jpg
+  - image: /images/uploads/edg-news.jpg
+  - image: /images/uploads/edg-event.jpg
+  - image: /images/uploads/edg-jobs.jpg
+  - image: /images/uploads/edg-initiative.jpg
