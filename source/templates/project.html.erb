@@ -1,8 +1,8 @@
 <div class='project-detail'>
   <div class='wrap'>
     <div class='images'>
-      <% content.screens.each do |image| %>
-      <img src='<%= image %>' />
+      <% content.screens.each do |screen| %>
+      <img src='<%= screen.image %>' />
       <% end %>
     </div>
     <div class='copy'>
@@ -15,7 +15,7 @@
           <li><strong>I worked with:</strong>
             <ul>
               <% content.collaborators.each do |colab| %>
-              <li><%= colab %></li>
+              <li><%= colab.collaborator %></li>
               <% end %>
             </ul>
           </li>

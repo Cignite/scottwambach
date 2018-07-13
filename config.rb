@@ -51,8 +51,8 @@ data.pages.each do |page|
   proxy "/#{page.first.gsub('_', '/')}/index.html", "/templates/page.html", locals: { page_name: page[1].title, content: page[1] }, ignore: true
 end
 
-data.projects.each do |project|
-  proxy "/work/#{project.title.downcase.gsub(' ', '-')}/index.html", "/templates/project.html", locals: { project_name: project.title, content: project }, ignore: true
+data.project_items.each do |project|
+  proxy "/work/#{project[0]}/index.html", "/templates/project.html", locals: { project_name: project[1].title, content: project[1] }, ignore: true
 end
 
 configure :build do
