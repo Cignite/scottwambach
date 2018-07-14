@@ -2,9 +2,27 @@
   text-align: center
 
   .container
-    margin-right: -30px
+
+    +scale-up($ipad-port)
+      margin-right: -30px
+
+    +scale-up-between($mobile, $ipad-port)
+      margin-right: -20px
 
   .single-item
-    display: inline-block
-    padding: 0 30px 30px 0
-    width: 32%
+
+    +scale-up($ipad-port)
+      padding: 0 30px 30px 0
+      width: 32%
+
+    +scale-up-between($mobile, $ipad-port)
+      padding: 0 20px 30px 0
+      width: 48.5%
+
+    +scale-up($mobile)
+      display: inline-block
+
+    +scale-down($mobile)
+      display: block
+      padding-bottom: 30px
+      width: 100%

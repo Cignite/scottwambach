@@ -1,15 +1,17 @@
 .single-item
   box-sizing: border-box
   text-align: left
-  transform: scale(1)
-  transition-duration: $anim-speed
   vertical-align: top
 
-  &:hover
-    transform: scale(1.1)
+  +scale-up($ipad-port)
+    transform: scale(1)
+    transition-duration: $anim-speed
 
-    .inner
-      box-shadow: 0 10px 20px -15px $black
+    &:hover
+      transform: scale(1.1)
+
+      .inner
+        box-shadow: 0 10px 20px -15px $black
 
   .inner
     background-position: top center
