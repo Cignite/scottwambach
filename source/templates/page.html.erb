@@ -1,13 +1,10 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class='wrap'>
-  <h1><%= content.title %></h1>
+<div class='page'>
+  <div class='wrap'>
+    <h1><%= content.title %></h1>
+  </div>
+  <% content.body_content.each do |content_block| %>
+  <section class='widget <%= content_block.first[0].gsub('_', '-') %>'>
+    <%= partial "partials/organisms/#{content_block.first[0].gsub('_', '-')}", locals: { content: content_block.first[1] } %>
+  </section>
+  <% end %>
 </div>
-<% content.body_content.each do |content_block| %>
-<section class='widget <%= content_block.first[0].gsub('_', '-') %>'>
-  <%= partial "partials/organisms/#{content_block.first[0].gsub('_', '-')}", locals: { content: content_block.first[1] } %>
-</section>
-<% end %>

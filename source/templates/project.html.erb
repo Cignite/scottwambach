@@ -1,10 +1,5 @@
 <div class='project-detail'>
   <div class='wrap'>
-    <div class='images'>
-      <% content.screens.each do |screen| %>
-      <img src='<%= screen.image %>' />
-      <% end %>
-    </div>
     <div class='copy'>
       <div class='inner'>
         <h3><%= content.title %></h3>
@@ -21,6 +16,11 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class='images'>
+      <% content.screens.each do |screen| %>
+      <img src='<%= screen.image %>' />
+      <% end %>
     </div>
   </div>
 </div>

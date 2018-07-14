@@ -1,9 +1,16 @@
-.project-detail
-  padding-top: 60px
+.project-detail,
+.page
+  padding-top: 30px
 
+  +scale-up($ipad-port)
+    padding-top: 60px
+
+.project-detail
   .wrap
-    align-items: top
-    display: flex
+    +scale-up($ipad-port)
+      align-items: top
+      display: flex
+      flex-direction: row-reverse
 
     > div
       width: 100%
@@ -13,15 +20,20 @@
     margin-bottom: 100px
 
   .copy
-    padding: 0 0 0 50px
+    +scale-up($ipad-port)
+      padding: 0 0 0 50px
+
+    +scale-down($ipad-port)
+      padding-bottom: 50px
 
     p
       color: $black
       margin-bottom: 20px
 
     .inner
-      position: sticky
-      top: 120px
+      +scale-up($ipad-port)
+        position: sticky
+        top: 120px
 
   ul
     ul
