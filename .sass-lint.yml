@@ -7,6 +7,7 @@ files:
   ignore:
     - 'gulp/stylesheets/libs/**/*.*'
     - 'bower_components/**/*.*'
+    - 'source/sass/admin/**/*.*'
     - 'source/sass/libs/**/*.*'
     - 'source/sass/core/helpers/**/*.*'
 
