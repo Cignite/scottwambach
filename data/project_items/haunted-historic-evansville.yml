@@ -1,9 +1,9 @@
 title: Haunted Historic Evansville
-url: http://hauntedevansville.com/
+url: 'https://hauntedevansville.com/'
 cms: Netlify CMS
 role: Front-end
 collaborators:
   - collaborator: 'Designer: Sprout Design'
   - collaborator: 'Copywriter: Red Tortoise'
 screens:
-  - image: '/images/uploads/haunted.jpg'
+  - image: /images/uploads/haunted.jpg
