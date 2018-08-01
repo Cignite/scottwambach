@@ -1,7 +1,7 @@
 title: Sprout Design
 url: 'http://sproutyourdesign.com'
-cms: WordPress
-role: Front-end / WordPress Developer
+cms: Netlify CMS
+role: Front-end
 collaborators:
   - collaborator: 'Designer: Sprout Design'
   - collaborator: 'Copywriter: Red Tortoise'
