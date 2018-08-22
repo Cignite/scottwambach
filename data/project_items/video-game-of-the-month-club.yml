@@ -1,8 +1,8 @@
 title: Video Game of the Month Club
-url: http://videogameofthemonth.club/
-cms: WordPress
-role: Front-end / WordPress Developer
+url: 'http://videogameofthemonth.club/'
+cms: Cockpit
+role: Front-end sc
 collaborators:
   - collaborator: 'Designer: Sprout Design'
 screens:
-  - image: '/images/uploads/videogame.jpg'
+  - image: /images/uploads/videogame.jpg
