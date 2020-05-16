@@ -7,19 +7,19 @@ import BackgroundImage, { SBackgroundImage } from '../helpers/BackgroundImage';
 const CurratedContent = ({ content }) => {
   const { posts, pages, products } = useStaticQuery(graphql`
     {
-      products: allSanityProduct {
-        edges {
-          node {
-            _id
-            title
-            slug {
-              current
-            }
-            _rawMainImage
-            title
-          }
-        }
-      }
+      # products: allSanityProduct {
+      #   edges {
+      #     node {
+      #       _id
+      #       title
+      #       slug {
+      #         current
+      #       }
+      #       _rawMainImage
+      #       title
+      #     }
+      #   }
+      # }
       pages: allSanityPage {
         edges {
           node {
@@ -53,7 +53,7 @@ const CurratedContent = ({ content }) => {
       <Wrapper>
         <div>
           {content.posts.map(({ _ref }, index) =>
-            [...posts.edges, ...pages.edges, ...products.edges].map(
+            [...posts.edges, ...pages.edges].map(
               ({ node: { _id, title, _rawMainImage, slug } }) =>
                 _id === _ref && (
                   <Link key={_id + index} to={slug.current}>
