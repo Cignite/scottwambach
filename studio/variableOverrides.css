@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+:root {
+  --font-family-serif: 'Lora';
+
+  --body-bg: #ffffff;
+  --text-color: #735541;
+
+  --brand-primary: #e9ca61;
+  --brand-secondary: #eed684;
+
+  --component-bg: #ffffff;
+  --component-border-color: #777;
+  --component-box-shadow: 0 1px 3px color(var(--black) a(50%));
+
+  --state-danger-color: #f8495f;
+}
+
+[class^='Branding_root'] {
+  padding: 0;
+}
+
+[class^='DefaultPane_headerViewMenu'] {
+  margin: 0;
+}
+
+[class^='DefaultPane_headerPaneActions'] {
+  display: none;
+}
+
+[class^='TabList_root'] {
+  border-top: 1px solid #cfcfcf;
+  background-color: var(--body-bg);
+}
+
+[class^='TabList_root']::before,
+[class^='TabList_root']::after {
+  content: none;
+}
+
+[class^='TabList_root'] button[aria-selected='false'] {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+[class^='TabList_root'] button[aria-selected='false']:hover {
+  opacity: 1;
+}
+
+[class^='TabList_root'] button[aria-selected='true'] {
+  opacity: 1;
+}

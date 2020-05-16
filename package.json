@@ -1,56 +1,43 @@
 {
-  "name": "new-project",
+  "name": "scottwambach-root",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "lerna clean",
+    "deploy": "lerna run deploy",
+    "empty-cache": "lerna run empty-cache",
+    "init": "cd studio && sanity init && lerna run graphql-deploy",
+    "format": "lerna run format",
+    "graphql-deploy": "lerna run graphql-deploy",
+    "lint": "lerna run lint",
+    "now-deploy": "now && now alias",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run deployall --parallel",
+    "deployall": "yarn graphql-deploy && sanity-deploy",
+    "start": "lerna run start --parallel",
+    "build": "yarn gatsby-build && sanity-build",
+    "serve": "yarn gatsby-serve",
+    "sanity-build": "lerna run sanity-build --parallel",
+    "gatsby-build": "lerna run build --parallel",
+    "gatsby-serve": "lerna run serve --parallel",
+    "gatsby-test": "lerna run test --parallel",
+    "test": "yarn gatsby-build && lerna run lighthouse --parallel"
   },
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "git+https://github.com/scwambach/scottwambach.git"
   },
-  "author": "Scott Wambach",
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.24.4",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-browserify": "^0.5.1",
-    "gulp-clean-css": "^3.9.4",
-    "gulp-concat": "^2.6.1",
-    "gulp-css-scss": "^0.1.0",
-    "gulp-eslint": "^4.0.2",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-pxtorem": "^3.0.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-lint": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "pump": "^3.0.0"
+  "bugs": {
+    "url": "https://github.com/scwambach/scottwambach/issues"
   },
+  "homepage": "https://github.com/scwambach/scottwambach#readme",
   "dependencies": {
-    "barba.js": "^1.0.0",
-    "font-awesome": "^4.7.0",
-    "fullpage.js": "^2.9.7",
-    "fuse.js": "^3.2.1",
-    "instafeed.js": "^1.4.1",
-    "jquery": "^3.3.1",
-    "lightbox2": "^2.10.0",
-    "mediaelement": "^4.2.9",
-    "moment": "^2.22.2",
-    "scrollmagic": "^2.0.5",
-    "slick-carousel": "^1.8.1",
-    "smartmenus": "^1.1.0",
-    "smartmenus-keyboard": "^0.4.0",
-    "webfontloader": "^1.6.28"
+    "@lhci/server": "^0.3.14",
+    "babel-eslint": "^10.1.0",
+    "gatsby-plugin-netlify": "^2.2.1",
+    "lerna": "^3.20.2"
   }
 }
