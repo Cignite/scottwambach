@@ -1,3 +1,3 @@
 export default function resolveProductionUrl(document) {
-  return `https://scottwambach.netlify.com/preview?docid=${document._id}`;
+  return `https://scottwambach.netlify.app/preview?docid=${document._id}`;
 }

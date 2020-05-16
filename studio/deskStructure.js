@@ -19,7 +19,7 @@ const hiddenTypes = [
 ];
 
 // Simple example of web preview
-const remoteURL = 'https://scottwambach.netlify.com/preview';
+const remoteURL = 'https://scottwambach.netlify.app/preview';
 const localURL = 'http://localhost:8000/preview';
 const previewURL =
   window.location.hostname === 'localhost' ? localURL : remoteURL;
