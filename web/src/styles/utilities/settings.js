@@ -5,12 +5,14 @@ export const colors = {
   lightGray: '#f8f8f8',
   darkGray: '#9d9fa2',
   darkerGray: '#636466',
+  yellow: '#e9ca61',
   green: '#96AD41',
   lightGreen: '#a7c57a',
   orange: '#D57824',
   blue: '#1A77B9',
   darkBlue: '#2F3490',
   red: '#b80000',
+  brown: '#735541',
   text: '#444444',
   blackOverlay: 'rgba(0, 0, 0, .6)',
   facebook: '#4267b2',
@@ -20,8 +22,8 @@ export const colors = {
 };
 
 export const font = {
-  primary: 'Open Sans, sans-serif',
-  secondary: 'Merriweather, erif',
+  primary: 'Raleway, sans-serif',
+  secondary: 'Oswald, sans-serif',
 };
 
 export const spacing = {
@@ -37,7 +39,7 @@ export const breakpoints = {
   ipadMid: 960,
   midTab: 896,
   ipadPort: 768,
-  pageWidth: 1240,
+  pageWidth: 1000,
   mapBreak1: 1660,
 };
 

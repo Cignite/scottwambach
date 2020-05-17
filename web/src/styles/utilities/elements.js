@@ -4,6 +4,7 @@ import { below, above } from './mediaQueries';
 
 export const richTextContent = css`
   line-height: 1.5;
+  font-family: ${font.primary};
 
   h1,
   h2,
@@ -37,7 +38,7 @@ export const richTextContent = css`
   h5,
   h6 {
     font-weight: 700;
-    font-family: ${font.primary};
+    font-family: ${font.secondary};
   }
 
   h1 {

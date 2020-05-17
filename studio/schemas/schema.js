@@ -10,7 +10,6 @@ import minimalContent from './modules/minimalContent';
 import portfolioItem from './docTypes/portfolioItem';
 import post from './docTypes/post';
 import category from './docTypes/category';
-import page from './docTypes/page';
 import meta from './modules/meta';
 import menu from './docTypes/menu';
 
@@ -37,7 +36,6 @@ export default createSchema({
 
     // Post Types
     post,
-    page,
     menu,
     portfolioItem,
 

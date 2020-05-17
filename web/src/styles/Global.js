@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { font, spacing, misc, colors, breakpoints } from './utilities/settings';
-import { below } from './utilities/mediaQueries';
+import { font, spacing, misc, colors } from './utilities/settings';
 import { richTextContent } from './utilities/elements';
 
 const GlobalStyle = createGlobalStyle`
@@ -34,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     line-height: 1;
-    font-family: ${font.secondary};
+    font-family: ${font.primary};
     ${({ open }) => (open ? 'overflow: hidden;' : '')};
     color: ${colors.text};
     background-color: ${colors.white};
@@ -45,29 +44,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-    ${({ transparentHeader }) =>
-      transparentHeader
-        ? ''
-        : `
-      padding-top: ${spacing.headerHeight};
-      @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
-        padding-top: ${spacing.headerMobile};
-      }
-    `}
     &.alert {
       padding-top: ${spacing.headerAlert};
-    }
-
-    section {
-      margin-bottom: ${misc.sectionMargin}px;
-
-      ${below.ipadPort`
-        margin-bottom: ${misc.sectionMobileMargin}px;
-      `}
     }
   }
 

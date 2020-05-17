@@ -20,19 +20,19 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'image',
-        path: `${__dirname}/src/images`,
-      },
-    },
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'dataFiles',
         path: `${__dirname}/data/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'image',
+        path: `${__dirname}/src/images`,
       },
     },
     'gatsby-transformer-yaml',
@@ -55,12 +55,11 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: 'Merriweather',
-            variants: ['400', '700'],
+            family: 'Oswald',
+            variants: ['700'],
           },
           {
-            family: 'Open Sans',
-            variants: ['400', '700'],
+            family: 'Raleway',
           },
         ],
       },
@@ -72,31 +71,6 @@ module.exports = {
         dataset: GATSBY_SANITY_DATASET,
         token: GATSBY_SANITY_TOKEN,
         watchMode: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-amp',
-      options: {
-        analytics: {
-          type: 'gtag',
-          dataCredentials: 'include',
-          config: {
-            vars: {
-              gtag_id: 'GTM-K9LP6F8',
-              config: {
-                'GTM-K9LP6F8': {
-                  page_location: '{{pathname}}',
-                },
-              },
-            },
-          },
-        },
-        canonicalBaseUrl: GATSBY_SITEURL,
-        components: ['amp-form'],
-        excludedPaths: ['/404*', '/'],
-        pathIdentifier: '/amp/',
-        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
-        useAmpClientIdApi: true,
       },
     },
   ],

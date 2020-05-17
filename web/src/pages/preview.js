@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from '@sanity/client';
 import Layout from '../components/Layout';
-import Content from '../components/Content';
 import Loader from '../components/helpers/Loader';
-import Post from '../components/preview/Post';
 
 const { GATSBY_SANITY_ID } = process.env;
 const { GATSBY_SANITY_DATASET } = process.env;
 const { GATSBY_SANITY_TOKEN } = process.env;
 
 const preview = () => {
-  const [previewType, setPreviewType] = useState(null);
+  // const [previewType, setPreviewType] = useState(null);
   const [previewData, setPreviewData] = useState(null);
-  const [author, setAuthor] = useState(null);
   const [pageLoad, setPageLoad] = useState(null);
 
   useEffect(() => {
@@ -38,18 +35,11 @@ const preview = () => {
       client.fetch(query).then(data => {
         setPreviewData(data[0]);
         setPageLoad(false);
-        setPreviewType(
-          idReturn(global.window.location.search)[1] === '0'
-            ? 'page'
-            : 'listing'
-        );
-
-        if (data[0].user) {
-          const userQuery = `*[_id in path("${data[0].user._ref}")]`;
-          client.fetch(userQuery).then(userData => {
-            setAuthor(userData[0]);
-          });
-        }
+        // setPreviewType(
+        //   idReturn(global.window.location.search)[1] === '0'
+        //     ? 'page'
+        //     : 'listing'
+        // );
       });
     }
   }, []);
@@ -61,21 +51,21 @@ const preview = () => {
     >
       {pageLoad && !previewData && <Loader bg />}
       {!pageLoad && previewData && (
-        <>
-          {previewData._type === 'page' && (
-            <>
-              {previewData.pageContent && (
-                <Content
-                  mainImage={previewData.mainImage}
-                  contentArray={previewData.pageContent}
-                />
-              )}
-            </>
-          )}
-          {previewData._type === 'post' && (
-            <Post content={previewData} type={previewType} author={author} />
-          )}
-        </>
+        <code>
+          <pre
+            style={{
+              fontFamily: 'monospace',
+              display: 'block',
+              padding: '50px',
+              color: '#88ffbf',
+              backgroundColor: 'black',
+              textAlign: 'left',
+              whiteSpace: 'pre-wrap',
+            }}
+          >
+            {JSON.stringify(previewData, null, '    ')}
+          </pre>
+        </code>
       )}
     </Layout>
   );

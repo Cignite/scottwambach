@@ -7,7 +7,6 @@ import EditIcon from 'part:@sanity/base/edit-icon';
 
 const hiddenTypes = [
   'category',
-  'page',
   'post',
   'menu',
   'siteSettings',
@@ -98,10 +97,6 @@ export default () =>
   S.list()
     .title('Content')
     .items([
-      S.listItem()
-        .title('Pages')
-        .schemaType('page')
-        .child(S.documentTypeList('page')),
       S.listItem()
         .title('Portfolio')
         .schemaType('portfolioItem')

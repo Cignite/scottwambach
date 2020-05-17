@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { setConfig } from 'react-hot-loader';
-import Helmet from 'react-helmet';
+import styled from 'styled-components';
 import GlobalStyle from '../styles/Global';
 import Header from './Header';
 import Footer from './Footer';
-import { colors } from '../styles/utilities/settings';
+import { colors, breakpoints } from '../styles/utilities/settings';
 import Dochead from './Dochead';
-import HeaderAmp from './HeaderAmp';
+import Wrapper from '../styles/utilities/Wrapper';
 
 setConfig({
   showReactDomPatchNotification: false,
@@ -104,9 +104,6 @@ const Layout = ({
   `);
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(false);
-  const [headerScroll, setHeaderScroll] = useState(false);
 
   return (
     <SiteContext.Provider
@@ -117,16 +114,9 @@ const Layout = ({
         mainLogo: fluid,
         menus: menus.edges,
         allImages: allImages.nodes,
-        headerScroll,
-        setHeaderScroll,
-        transparentHeader,
         siteMeta,
         menuOpen,
-        modalOpen,
         setMenuOpen,
-        setModalOpen,
-        searchTerm,
-        setSearchTerm,
       }}
     >
       <Dochead
@@ -137,50 +127,56 @@ const Layout = ({
         pageImage={pageImage || null}
         amp={amp}
       />
-      {amp && (
-        <Helmet
-          script={[{ src: 'https://cdn.ampproject.org/v0.js', async: true }]}
-          meta={[
-            {
-              name: 'viewport',
-              content:
-                'width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no',
-            },
-          ]}
-        />
-      )}
-      <GlobalStyle
-        open={modalOpen || menuOpen}
-        transparentHeader={transparentHeader}
-      />
-      <a
-        style={{
-          position: 'fixed',
-          zIndex: '-9999',
-          padding: '20px',
-          background: colors.black,
-          color: colors.white,
-          border: `3px solid ${colors.white}`,
-        }}
-        className="skip-link"
-        href="#bodyContent"
-      >
-        Skip to body.
-      </a>
-      <main
+      <GlobalStyle open={menuOpen} transparentHeader={transparentHeader} />
+      <SLayout
         className={_rawAlertBar ? 'alert' : null}
         style={{
           paddingTop: amp && '73px',
         }}
       >
-        {amp ? <HeaderAmp /> : <Header />}
-        <div id="bodyContent" className="body-content">
-          {children}
-        </div>
+        <a
+          style={{
+            position: 'fixed',
+            zIndex: '-9999',
+            padding: '20px',
+            background: colors.black,
+            color: colors.white,
+            border: `3px solid ${colors.white}`,
+          }}
+          className="skip-link"
+          href="#bodyContent"
+        >
+          Skip to body.
+        </a>
+        <Wrapper>
+          <Header />
+          <div id="bodyContent" className="body-content">
+            {children}
+          </div>
+        </Wrapper>
         <Footer />
-      </main>
+      </SLayout>
     </SiteContext.Provider>
   );
 };
 
 export default Layout;
+
+const SLayout = styled.main`
+  > ${Wrapper} {
+    padding-top: 50px;
+
+    @media screen and (min-width: ${breakpoints.ipadPort}px) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  .skip-link {
+    opacity: 0;
+
+    &:focus {
+      opacity: 1;
+    }
+  }
+`;

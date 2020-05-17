@@ -24,6 +24,15 @@ export default {
       type: 'image',
     },
     {
+      name: 'bannerImage',
+      title: 'Banner image',
+      type: 'image',
+      validation: Rule => Rule.required(),
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       title: 'Socials',
       name: 'socialList',
       type: 'array',

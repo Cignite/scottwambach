@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import RichText from './contentBlocks/RichText';
+import RichText from './RichText';
 import { SiteContext } from './Layout';
 import Wrapper from '../styles/utilities/Wrapper';
 import {
@@ -9,166 +9,46 @@ import {
   misc,
   spacing,
   breakpoints,
+  font,
 } from '../styles/utilities/settings';
 import Menu from './modules/Menu';
-import { above, below } from '../styles/utilities/mediaQueries';
 import Form from '../styles/modules/Form';
-import { Input, Submit } from '../styles/modules/Inputs';
 import SvgLoader from './helpers/SvgLoader';
 
 const Header = () => {
-  const {
-    transparentHeader,
-    headerScroll,
-    setHeaderScroll,
-    menuOpen,
-    setMenuOpen,
-    alertBar,
-    mainLogo,
-    siteTitle,
-    siteDescription,
-  } = useContext(SiteContext);
-
-  const [searchToggle, setSearchToggle] = useState(false);
-
-  const handleScroll = () => {
-    if (global.window.scrollY > global.window.innerHeight / 4) {
-      setHeaderScroll(true);
-    } else {
-      setHeaderScroll(false);
-    }
-  };
-
-  useEffect(() => {
-    global.window.addEventListener('scroll', e => {
-      handleScroll(e);
-    });
-    return () => {
-      global.window.removeEventListener('scroll', e => {
-        handleScroll(e);
-      });
-    };
-  }, []);
+  const { menuOpen, setMenuOpen, alertBar } = useContext(SiteContext);
 
   return (
-    <SHeader
-      transparent={transparentHeader && !headerScroll}
-      search={searchToggle}
-      menuOpen={menuOpen}
-      alert={alertBar}
-    >
+    <SHeader menuOpen={menuOpen} alert={alertBar}>
       {alertBar && (
         <AlertBar>
           <RichText content={{ copy: alertBar }} />
         </AlertBar>
       )}
-      <Wrapper>
-        <InnerHeader
-          transparent={transparentHeader && !headerScroll}
-          menuOpen={menuOpen}
+      <InnerHeader menuOpen={menuOpen}>
+        <Link to="/" className="logo">
+          <SvgLoader name="logo" width={100} />
+        </Link>
+        <MenuToggle
+          href={null}
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+          }}
+          close={menuOpen}
         >
-          <Link to="/" className="logo">
-            <img src={mainLogo.src} alt={siteTitle} />
-            <p>{siteDescription}</p>
-          </Link>
-          <MenuToggle
-            href={null}
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
-            close={menuOpen}
-          >
-            <span />
-            <span />
-            <span />
-          </MenuToggle>
-          <MainMenu transparent={transparentHeader && !headerScroll}>
-            <Menu menuTitle="Main Menu" />
-            <a
-              href="#"
-              onClick={e => {
-                e.preventDefault();
-                global.document.getElementById('searchInput').focus();
-                setSearchToggle(!searchToggle);
-              }}
-            >
-              <SvgLoader name="search" width={16} color={colors.blue} />
-            </a>
-            <div className="search">
-              <Form
-                onSubmit={e => {
-                  e.preventDefault();
-                  if (typeof window !== 'undefined') {
-                    global.window.location.href = '/search';
-                  }
-                }}
-                className="singleSubmit"
-              >
-                <Input
-                  type="search"
-                  id="searchInput"
-                  placeholder="What are you looking for?"
-                  onChange={e => {
-                    if (typeof window !== 'undefined') {
-                      global.localStorage.setItem('searchTerm', e.target.value);
-                    }
-                  }}
-                />
-                <Submit type="submit" value="Search" />
-                <CloseSearch
-                  href="#"
-                  onClick={e => {
-                    e.preventDefault();
-                    setSearchToggle(false);
-                  }}
-                >
-                  <span />
-                  <span />
-                </CloseSearch>
-              </Form>
-            </div>
-            <TopBarMenu alert={alertBar}>
-              <Wrapper>
-                <Menu menuTitle="Top Menu" />
-              </Wrapper>
-            </TopBarMenu>
-          </MainMenu>
-        </InnerHeader>
-      </Wrapper>
+          <span />
+          <span />
+          <span />
+        </MenuToggle>
+        <MainMenu>
+          <Menu menuTitle="Main Menu" />
+        </MainMenu>
+      </InnerHeader>
     </SHeader>
   );
 };
 
 export default Header;
-
-// Close Search
-
-const CloseSearch = styled.a`
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: -30px;
-  background-color: ${colors.blackOverlay};
-
-  span {
-    display: block;
-    height: 2px;
-    width: 24px;
-    background-color: ${colors.white};
-    margin: 0 auto;
-    transform: rotate(45deg);
-    position: relative;
-    top: 14px;
-
-    + span {
-      transform: rotate(-45deg);
-      top: 12px;
-    }
-  }
-`;
 
 // Menu Toggle Styles
 export const MenuToggle = styled.a`
@@ -232,38 +112,8 @@ export const AlertBar = styled.div`
   justify-content: center;
 `;
 
-// Top Bar Menu Styles
-export const TopBarMenu = styled.div`
-  padding: ${({ alert }) => (alert ? '30px 0 5px' : '5px 0')};
-
-  @media screen and (min-width: ${breakpoints.ipadPort}px) {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  ${Wrapper} {
-    @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
-      padding: 0;
-    }
-  }
-
-  li {
-    a {
-      text-decoration: underline;
-      font-size: 12px;
-    }
-  }
-`;
-
 // Main Menu Styles
 export const MainMenu = styled.nav`
-  @media screen and (min-width: ${breakpoints.ipadPort}px) {
-    display: flex;
-    align-items: center;
-  }
-
   @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
     position: fixed;
     top: 0;
@@ -301,34 +151,17 @@ export const MainMenu = styled.nav`
         }
       }
     }
-
-    svg {
-      path {
-        ${({ transparent }) =>
-          transparent && `fill: ${colors.white} !important;`}
-      }
-    }
   }
 
   ul {
-    ${above.ipadPort`
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-    `}
-
     > li {
-      ${above.ipadPort`
-        text-align: center;
-      `}
+      text-align: right;
 
-      ${below.ipadPort`
-        text-align: right;
-
+      @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
         + li {
           border-top: 1px solid ${colors.black};
         }
-      `}
+      }
 
       &.hasSub {
         position: relative;
@@ -350,12 +183,12 @@ export const MainMenu = styled.nav`
         &:hover,
         &.open {
           ul {
-            ${above.ipadPort`
+            @media screen and (min-width: ${breakpoints.ipadPort}px) {
               position: absolute;
               top: 100%;
               display: block;
               width: 200px;
-            `}
+            }
           }
         }
       }
@@ -363,61 +196,43 @@ export const MainMenu = styled.nav`
       ul {
         display: none;
 
-        ${above.ipadPort`
+        @media screen and (min-width: ${breakpoints.ipadPort}px) {
           background-color: ${colors.white};
-          ${({ transparent }) =>
-            transparent
-              ? ''
-              : `box-shadow: 0 10px 10px -15px ${colors.black};`};
-        `}
+        }
 
         li {
           text-align: left;
 
-          ${below.ipadPort`
+          @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
             text-align: right;
             border-top: 1px solid ${colors.gray};
-          `}
+          }
         }
 
         a {
-          color: ${({ transparent }) =>
-            transparent ? colors.text : colors.blue};
+          color: ${colors.text};
         }
       }
 
       > a {
         display: block;
         @media screen and (min-width: ${breakpoints.ipadPort}px) {
-          ${({ transparent }) => transparent && `color: ${colors.white};`}
           padding: 10px;
         }
 
-        ${below.ipadPort`
+        @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
           padding: 15px 20px;
-        `}
+        }
       }
     }
   }
 
-  ${TopBarMenu} {
-    ul {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    li {
-      margin-left: 20px;
-      border-top: 0;
-    }
-  }
-
   .subToggle {
-    ${above.ipadPort`
+    @media screen and (min-width: ${breakpoints.ipadPort}px) {
       display: none;
-    `}
+    }
 
-    ${below.ipadPort`
+    @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
       border-left: 1px solid ${colors.black};
       position: absolute;
       right: 0;
@@ -428,74 +243,69 @@ export const MainMenu = styled.nav`
       justify-content: center;
       align-items: center;
       padding: 0;
-    `}
+    }
   }
 `;
 
 // Inner Container Styles
 export const InnerHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  ${below.ipadPort`
     ${MainMenu} {
       right: ${({ menuOpen }) => (menuOpen ? '0' : '-80vw')};
     }
-  `}
+  }
 
   .logo {
     display: block;
     position: relative;
     z-index: 3;
     transition-duration: ${misc.animSpeed};
-    ${({ transparent }) => transparent && `color: ${colors.white};`}
-    ${below.ipadPort`
-      left: ${({ menuOpen }) => (menuOpen ? '20vw' : '0')};
-    `}
-    img {
-      height: 41px;
-      width: auto;
-      margin-right: 20px;
 
-      ~ p {
-        margin-top: 5px;
-        font-size: 12px;
-        ${below.ipadPort`
-          display: none;
-        `}
-      }
+    @media screen and (min-width: ${breakpoints.ipadPort}px) {
+      text-align: right;
     }
-  }
 
-  ${MenuToggle} {
-    path {
-      ${({ transparent, menuOpen }) =>
-        transparent && !menuOpen && `fill: ${colors.white} !important;`}
+    @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
+      left: ${({ menuOpen }) => (menuOpen ? '20vw' : '0')};
+    }
+
+    &:hover {
+      background: none;
+    }
+
+    svg {
+      max-width: 100px;
+      margin-bottom: 20px;
     }
   }
 `;
 
 // Header Styles
 export const SHeader = styled.header`
-  padding: ${({ alert }) => (alert ? '45px 0 20px' : '30px 0 20px')};
-  ${({ transparent }) =>
-    transparent ? '' : `box-shadow: 0 0 20px -10px ${colors.black};`};
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 250px;
   z-index: 10;
   transition-duration: ${misc.animSpeed};
-  background-color: ${({ transparent }) =>
-    transparent ? colors.transparent : colors.white};
+  background-color: ${colors.white};
+  font-family: ${font.secondary};
 
-  ${below.ipadPort`
-    padding: ${({ alert }) => (alert ? '0 0 20px' : '20px 0')};
-  `}
+  @media screen and (min-width: ${breakpoints.ipadPort}px) {
+    position: sticky;
+    top: 50px;
+    border-right: 1px solid ${colors.text};
+    padding-right: 30px;
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
+    width: 100%;
+  }
 
   &:before {
-    ${below.ipadPort`
+    @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
       content: '';
       display: block;
       background-color: ${colors.black};
@@ -508,13 +318,18 @@ export const SHeader = styled.header`
       top: 0;
       left: 0;
       pointer-events: ${({ menuOpen }) => (menuOpen ? 'all' : 'none')};
-    `}
+    }
   }
 
   a {
-    color: ${colors.blue};
+    color: ${colors.text};
+    text-transform: uppercase;
+
     &:hover {
-      color: ${colors.orange};
+      @media screen and (min-width: ${breakpoints.ipadPort}px) {
+        background-color: ${colors.text};
+        color: ${colors.white};
+      }
     }
   }
 
@@ -523,10 +338,10 @@ export const SHeader = styled.header`
   }
 
   ${MainMenu} {
-    ${below.ipadPort`
+    @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
       ${({ alert }) =>
         alert ? 'height: calc(100vh - 26px); margin-top: 26px;' : ''}
-    `}
+    }
   }
 
   .search {

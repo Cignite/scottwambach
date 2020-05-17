@@ -31,13 +31,12 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'pageUrl',
-          title: 'Page URL',
-          type: 'url',
-          validation: Rule =>
-            Rule.uri({
-              scheme: ['http', 'https'],
-            }),
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },
@@ -60,14 +59,16 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
+      highlightedPages: 'highlightedPages',
       slug: 'slug.current',
     },
     prepare(selection) {
-      const { title, slug } = selection;
+      const { title, slug, highlightedPages } = selection;
+
       return Object.assign({}, selection, {
         title,
         subtitle: `${slug}`,
+        media: highlightedPages[0],
       });
     },
   },
