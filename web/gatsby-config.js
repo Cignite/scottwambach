@@ -51,17 +51,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: 'Oswald',
-            variants: ['700'],
-          },
-          {
-            family: 'Raleway',
-          },
-        ],
+        google: {
+          families: ['Oswald:700', 'Raleway'],
+        },
       },
     },
     {
