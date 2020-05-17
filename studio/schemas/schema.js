@@ -7,32 +7,12 @@ import blockContent from './modules/blockContent';
 import simpleContent from './modules/simpleContent';
 import minimalContent from './modules/minimalContent';
 
+import portfolioItem from './docTypes/portfolioItem';
 import post from './docTypes/post';
 import category from './docTypes/category';
-import user from './docTypes/user';
 import page from './docTypes/page';
 import meta from './modules/meta';
-// import location from './docTypes/location';
-// import event from './docTypes/event';
 import menu from './docTypes/menu';
-// import product from './docTypes/product';
-// import productCategory from './docTypes/productCategory';
-
-import callToActionBanner from './components/callToActionBanner';
-import imageBlock from './components/imageBlock';
-import richText from './components/richText';
-import imageFeatures from './components/imageFeatures';
-import imageGallery from './components/imageGallery';
-import dataTable from './components/dataTable';
-// import locationsList from './components/locationsList';
-import codeBlock from './components/codeBlock';
-import featureSlider from './components/featureSlider';
-import curratedContent from './components/curratedContent';
-// import eventListing from './components/eventListing';
-import sectionHeading from './components/sectionHeading';
-import heroBanner from './components/heroBanner';
-import carousel from './components/carousel';
-import tiledLinks from './components/tiledLinks';
 
 import link from './modules/link';
 import imageWText from './modules/imageWText';
@@ -48,10 +28,6 @@ import iconSelector from './modules/iconSelector';
 import colorList from './modules/colorList';
 import tile from './modules/tile';
 
-// import customFields from './components/product/customFields';
-// import customField from './components/product/customField';
-// import option from './components/product/option';
-
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
@@ -62,36 +38,16 @@ export default createSchema({
     // Post Types
     post,
     page,
-    user,
     menu,
-    // location,
-    // event,
-    // product,
-    // productCategory,
+    portfolioItem,
 
     // Taxonomies
     category,
 
     // Flexible Content
-    callToActionBanner,
-    imageBlock,
-    richText,
     blockContent,
-    imageFeatures,
-    imageGallery,
-    dataTable,
-    // locationsList,
-    featureSlider,
-    codeBlock,
-    curratedContent,
-    // eventListing,
     simpleContent,
     minimalContent,
-    tiledLinks,
-
-    // Banners
-    carousel,
-    heroBanner,
 
     // Reusable Objects
     link,
@@ -101,17 +57,11 @@ export default createSchema({
     socialItem,
     field,
     textarea,
-    sectionHeading,
     fields,
     feature,
     slide,
     iconSelector,
     colorList,
     tile,
-
-    // Product Attributes
-    // customFields,
-    // customField,
-    // option,
   ]),
 });

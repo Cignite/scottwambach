@@ -9,13 +9,9 @@ const hiddenTypes = [
   'category',
   'page',
   'post',
-  'event',
   'menu',
-  'user',
-  'location',
   'siteSettings',
-  'product',
-  'productCategory',
+  'portfolioItem',
 ];
 
 // Simple example of web preview
@@ -75,7 +71,6 @@ const ListingPreview = ({ document }) => {
 };
 
 export const getDefaultDocumentNode = ({ schemaType }) => {
-  // Conditionally return a different configuration based on the schema type
   if (schemaType === 'page') {
     return S.document().views([
       S.view.form().icon(EditIcon),
@@ -107,6 +102,10 @@ export default () =>
         .title('Pages')
         .schemaType('page')
         .child(S.documentTypeList('page')),
+      S.listItem()
+        .title('Portfolio')
+        .schemaType('portfolioItem')
+        .child(S.documentTypeList('portfolioItem')),
       S.listItem()
         .title('Blog')
         .child(
@@ -140,54 +139,6 @@ export default () =>
             ])
         )
         .icon(MdCreate),
-      S.listItem()
-        .title('Users')
-        .schemaType('user')
-        .child(S.documentTypeList('user'))
-        .icon(FaUser),
-      // S.listItem()
-      //   .title('Events')
-      //   .schemaType('event')
-      //   .child(S.documentTypeList('event')),
-      // S.listItem()
-      //   .title('Locations')
-      //   .schemaType('location')
-      //   .child(S.documentTypeList('location')),
-      // S.listItem()
-      //   .title('Products')
-      //   .child(
-      //     S.list()
-      //       .title('Products')
-      //       .items([
-      //         S.listItem()
-      //           .title('Products')
-      //           .schemaType('product')
-      //           .child(S.documentTypeList('product')),
-      //         S.listItem()
-      //           .title('Sorted Products')
-      //           .schemaType('product')
-      //           .child(
-      //             S.documentTypeList('product')
-      //               .filter('_type == "productCategory"')
-      //               .child(id =>
-      //                 S.documentList()
-      //                   .title('Products by category')
-      //                   .schemaType('product')
-      //                   .filter(
-      //                     '_type == "product" && $id in categories[]._ref'
-      //                   )
-      //                   .params({ id })
-      //               )
-      //           )
-      //           .icon(FaSort),
-      //         S.listItem()
-      //           .title('Categories')
-      //           .schemaType('productCategory')
-      //           .child(S.documentTypeList('productCategory'))
-      //           .icon(FaStar),
-      //       ])
-      //   )
-      //   .icon(FaShoppingBasket),
       S.listItem()
         .title('Navigation')
         .schemaType('menu')

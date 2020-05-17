@@ -44,13 +44,6 @@ export default {
       },
     },
     {
-      name: 'user',
-      title: 'User',
-      type: 'reference',
-      validation: Rule => Rule.required(),
-      to: { type: 'user' },
-    },
-    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -93,6 +86,7 @@ export default {
       title: 'Meta Description',
       name: 'metaDescription',
       type: 'text',
+      rows: 3,
       description: 'Keep it short and sweet!',
       validation: Rule => Rule.max(150).required(),
     },

@@ -11,17 +11,17 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text'
+      type: 'text',
     },
     {
       name: 'mainLogo',
       title: 'Main Logo',
-      type: 'image'
+      type: 'image',
     },
     {
       title: 'Socials',
@@ -31,40 +31,40 @@ export default {
         {
           title: 'Social Item',
           name: 'socialItem',
-          type: 'socialItem'
-        }
-      ]
+          type: 'socialItem',
+        },
+      ],
     },
     {
       title: 'Alert Bar',
       name: 'alertBar',
-      type: 'simpleContent'
+      type: 'simpleContent',
     },
     {
       title: 'Copyright',
       name: 'copyright',
-      type: 'string'
+      type: 'string',
     },
     {
       title: 'Main Email',
       name: 'mainEmail',
-      type: 'string'
+      type: 'string',
     },
     {
       title: 'Phone',
       name: 'phone',
-      type: 'string'
+      type: 'string',
     },
     {
       title: 'Street',
       name: 'street',
-      type: 'string'
+      type: 'string',
     },
     {
       title: 'City State Zip',
       name: 'cityStateZip',
       type: 'string',
-      description: 'City, ST 12345'
-    }
-  ]
+      description: 'City, ST 12345',
+    },
+  ],
 };
