@@ -37,6 +37,13 @@ const InstaFeed = () => {
   `);
   return (
     <SInstaFeed>
+      <h2>
+        My inst
+        <span role="img" aria-label="fire">
+          🔥
+        </span>
+        gram 👇
+      </h2>
       {images.map(image => (
         <a
           key={image.id}

@@ -3,7 +3,6 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import ImageSizer from './helpers/ImageSizer';
 import { colors, misc } from '../styles/utilities/settings';
-import RichText from './RichText';
 
 const PortfolioList = () => {
   const {
@@ -25,6 +24,11 @@ const PortfolioList = () => {
   `);
   return (
     <SPortfolioList>
+      <h2
+        dangerouslySetInnerHTML={{
+          __html: 'Sites I&apos;ve had a hand in',
+        }}
+      />
       {items.map(item => (
         <Link to={item.slug.current} key={item._id}>
           <div>
