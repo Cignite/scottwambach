@@ -25,7 +25,10 @@ const PortfolioList = () => {
     <SPortfolioList>
       {items.map(item => (
         <Link to={item.slug.current} key={item._id}>
-          <h3>{item.title}</h3>
+          <div>
+            <h5>{item.title}</h5>
+            <p>{item.slug.current}</p>
+          </div>
           <div>
             <ImageSizer
               src={item.highlightedPages[0]}
@@ -46,32 +49,56 @@ const SPortfolioList = styled.div`
   a {
     display: flex;
     flex-direction: row-reverse;
-    padding: 30px 10px;
+    padding: 15px 0;
     align-items: center;
     color: ${colors.text};
     text-decoration: none;
+    position: relative;
     transition-duration: ${misc.animSpeed};
-    background-color: ${colors.white};
+    transform: perspective(0) translateY(0) scale(1) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg);
+    z-index: 1;
 
-    + a {
-      border-top: 1px solid ${colors.gray};
+    &:before {
+      content: '';
+      transition-duration: ${misc.animSpeed};
+      pointer-events: none;
+      background-color: ${colors.white};
+      width: 102%;
+      height: 102%;
+      position: absolute;
+      top: -1%;
+      left: -1%;
+      z-index: -1;
     }
 
     &:hover {
-      color: ${colors.text};
-      box-shadow: 0 0 50px -30px ${colors.black};
-      border-color: ${colors.white};
+      color: ${colors.white};
+      transform: perspective(1000px) translateY(-5px) scale(1.02) rotateX(-5deg)
+        rotateY(0deg) rotateZ(0deg);
+
+      &:before {
+        background-color: ${colors.text};
+        box-shadow: 0 -22px 30px -30px ${colors.black};
+      }
     }
 
-    > div {
-      width: 200px;
-      border: 1px solid ${colors.gray};
+    div {
+      &:nth-child(1) {
+        width: 100%;
+        margin: 0;
+        padding-left: 15px;
+      }
+
+      &:nth-child(2) {
+        width: 100px;
+        border: 1px solid ${colors.gray};
+      }
     }
   }
 
-  h3 {
-    width: 100%;
+  h5,
+  p {
     margin: 0;
-    padding-left: 30px;
   }
 `;
