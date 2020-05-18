@@ -7,6 +7,7 @@ import ImageSizer from '../components/helpers/ImageSizer';
 import { SImageLoader } from '../components/helpers/ImageLoader';
 import { colors } from '../styles/utilities/settings';
 import PortfolioList from '../components/PortfolioList';
+import InstaFeed from '../components/InstaFeed';
 
 const IndexPage = () => {
   const {
@@ -23,7 +24,10 @@ const IndexPage = () => {
       <FeaturedImage>
         <ImageSizer src={mainImage} alt="I Can See" height={400} width={800} />
       </FeaturedImage>
-      <PortfolioList />
+      <div className="content">
+        <PortfolioList />
+        <InstaFeed />
+      </div>
     </Layout>
   );
 };

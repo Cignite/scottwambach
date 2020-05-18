@@ -8,6 +8,8 @@ import Footer from './Footer';
 import { colors, breakpoints } from '../styles/utilities/settings';
 import Dochead from './Dochead';
 import Wrapper from '../styles/utilities/Wrapper';
+import { SInstaFeed } from './InstaFeed';
+import { SPortfolioList } from './PortfolioList';
 
 setConfig({
   showReactDomPatchNotification: false,
@@ -177,6 +179,19 @@ const SLayout = styled.main`
 
     &:focus {
       opacity: 1;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    ${SPortfolioList} {
+      width: calc(100% - 260px);
+    }
+
+    ${SInstaFeed} {
+      width: 250px;
     }
   }
 `;

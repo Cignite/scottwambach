@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import ImageSizer from './helpers/ImageSizer';
 import { colors, misc } from '../styles/utilities/settings';
+import RichText from './RichText';
 
 const PortfolioList = () => {
   const {
@@ -13,6 +14,7 @@ const PortfolioList = () => {
         items: nodes {
           _id
           title
+          metaDescription
           slug {
             current
           }
@@ -27,7 +29,7 @@ const PortfolioList = () => {
         <Link to={item.slug.current} key={item._id}>
           <div>
             <h5>{item.title}</h5>
-            <p>{item.slug.current}</p>
+            <p>{item.metaDescription}</p>
           </div>
           <div>
             <ImageSizer
@@ -45,12 +47,12 @@ const PortfolioList = () => {
 
 export default PortfolioList;
 
-const SPortfolioList = styled.div`
-  a {
+export const SPortfolioList = styled.div`
+  > a {
     display: flex;
     flex-direction: row-reverse;
     padding: 15px 0;
-    align-items: center;
+    align-items: flex-start;
     color: ${colors.text};
     text-decoration: none;
     position: relative;
@@ -83,7 +85,7 @@ const SPortfolioList = styled.div`
       }
     }
 
-    div {
+    > div {
       &:nth-child(1) {
         width: 100%;
         margin: 0;
@@ -91,7 +93,7 @@ const SPortfolioList = styled.div`
       }
 
       &:nth-child(2) {
-        width: 100px;
+        width: 150px;
         border: 1px solid ${colors.gray};
       }
     }
@@ -100,5 +102,9 @@ const SPortfolioList = styled.div`
   h5,
   p {
     margin: 0;
+  }
+
+  ul {
+    margin-top: 0;
   }
 `;

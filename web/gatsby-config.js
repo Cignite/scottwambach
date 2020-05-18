@@ -67,5 +67,11 @@ module.exports = {
         watchMode: true,
       },
     },
+    {
+      resolve: 'gatsby-source-instagram',
+      options: {
+        username: 'scottcwambach',
+      },
+    },
   ],
 };
