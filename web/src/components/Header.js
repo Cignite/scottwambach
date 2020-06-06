@@ -286,7 +286,7 @@ export const InnerHeader = styled.div`
 
 // Header Styles
 export const SHeader = styled.header`
-  width: 250px;
+  width: 160px;
   z-index: 10;
   transition-duration: ${misc.animSpeed};
   background-color: ${colors.white};

@@ -47,12 +47,17 @@ export default {
       type: 'blockContent',
     },
     {
+      title: 'Site URL',
+      name: 'siteUrl',
+      type: 'url',
+    },
+    {
       title: 'Meta Description',
       name: 'metaDescription',
       type: 'text',
       description: 'Keep it short and sweet!',
       rows: 3,
-      validation: Rule => Rule.max(150).required(),
+      validation: Rule => Rule.required(),
     },
   ],
 

@@ -14,7 +14,7 @@ export default {
       name: 'metaDescription',
       type: 'text',
       description: 'Keep it short and sweet!',
-      validation: Rule => Rule.max(150).required(),
+      validation: Rule => Rule.required(),
     },
   ],
 };
