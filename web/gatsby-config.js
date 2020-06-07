@@ -22,6 +22,10 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-transformer-json',
     {
+      resolve: 'gatsby-plugin-create-client-paths',
+      options: { prefixes: ['/work/*'] },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'dataFiles',

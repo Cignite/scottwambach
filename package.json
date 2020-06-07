@@ -37,6 +37,7 @@
   "dependencies": {
     "@lhci/server": "^0.3.14",
     "babel-eslint": "^10.1.0",
+    "gatsby-plugin-create-client-paths": "^2.3.3",
     "gatsby-plugin-netlify": "^2.2.1",
     "lerna": "^3.20.2"
   }
