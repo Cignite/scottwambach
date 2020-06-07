@@ -8,7 +8,6 @@ import Footer from './Footer';
 import { colors, breakpoints } from '../styles/utilities/settings';
 import Dochead from './Dochead';
 import Wrapper from '../styles/utilities/Wrapper';
-import { SInstaFeed } from './InstaFeed';
 import { SPortfolioList } from './PortfolioList';
 
 setConfig({
@@ -188,10 +187,6 @@ const SLayout = styled.main`
 
     ${SPortfolioList} {
       width: calc(100% - 260px);
-    }
-
-    ${SInstaFeed} {
-      width: 250px;
     }
   }
 `;
